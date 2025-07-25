@@ -53,7 +53,7 @@ dev = [
 Documentation = "https://some-url"
 
 [project.scripts]
-mypythontemplate = "mypythontemplate/scripts.mypythontemplate:main"
+mypythontemplate = "mypythontemplate.scripts.mypythontemplate:main"
 
 [tool.setuptools]
 package-dir = {"" = "mypythontemplate"}
