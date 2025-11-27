@@ -42,7 +42,7 @@
             "problemMatcher": ["$python"]
         },
         {
-            "label": "Common: Pre-commit",
+            "label": "Pre-commit: Run for all files",
             "type": "shell",
             "command": "${command:python.interpreterPath} -m pre_commit run --all-files",
             "args": [],
@@ -50,9 +50,25 @@
             "problemMatcher": []
         },
         {
+            "label": "Pre-commit: Autoupdate",
+            "type": "shell",
+            "command": "${command:python.interpreterPath} -m pre_commit autoupdate",
+            "args": [],
+            "group": "test",
+            "problemMatcher": []
+        },
+        {
             "label": "Radon: Current File",
             "type": "shell",
-            "command": "radon cc ${file} -a",
+            "command": "${command:python.interpreterPath} -m radon cc ${file} -a",
+            "args": [],
+            "group": "test",
+            "problemMatcher": []
+        },
+        {
+            "label": "pipdeptree: Check dependencies",
+            "type": "shell",
+            "command": "${command:python.interpreterPath} -m pipdeptree --exclude pip,pipdeptree,build,setuptools,wheel,twine,pre-commit,tox,tox-gh-actions,ruff,radon,xenon",
             "args": [],
             "group": "test",
             "problemMatcher": []
