@@ -7,7 +7,6 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name =  "MyPythonTemplate"
-version = "1.0.0"
 authors = [
     {name = "David Burel", email = "david.burel@burelovi.eu"},
 ]
@@ -38,6 +37,7 @@ classifiers=[
 ]
 
 requires-python = ">=3.10"
+dynamic = ["version"]
 
 [project.optional-dependencies]
 dev = [
@@ -62,6 +62,9 @@ mypythontemplate = "mypythontemplate.scripts.mypythontemplate:main"
 
 [tool.setuptools]
 package-dir = {"" = "mypythontemplate"}
+
+[tool.setuptools.dynamic]
+version = { file = "version.txt" }
 
 [tool.setuptools.packages.find]
 where = ["mypythontemplate"]
