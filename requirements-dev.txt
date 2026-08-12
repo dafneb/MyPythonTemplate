@@ -10,7 +10,7 @@ ruff>=0.14.13,<0.16.0
 
 # Building and packaging tools
 build~=1.4.0
-setuptools~=83.0.0
+setuptools>=83.0,<84.1
 wheel~=0.46.2
 twine~=6.2.0
 
